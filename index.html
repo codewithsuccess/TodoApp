@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App: Schedule Your Work</title>
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #b400c4, #85beff);
+            padding: 10px;
+        }
+
+        .todo-app {
+            width: 100%;
+            max-width: 540px;
+            background: #4692e9;
+            margin: 100px auto 20px;
+            padding: 40px 30px 70px;
+            border-radius: 10px;
+        }
+
+        .todo-app h2 {
+            color: #002765;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .todo-app h2 img {
+            width: 30px;
+            margin-left: 10px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f6f0f7;
+            border-radius: 30px;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 10px;
+            font-weight: 14px;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            padding: 16px 50px;
+            background: #b400c4;
+            color: antiquewhite;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+
+        ul li {
+            list-style: none;
+            font-size: 17px;
+            padding: 17px 8px 12px 50px;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            height: 28px;
+            width: 28px;
+            border-radius: 50%;
+            background-image: url(img/unchecked.png);
+            background-position: center;
+            background-size: cover;
+            top: 12px;
+            left: 8px;
+        }
+
+        ul li.checked {
+            color: #b400c4;
+            text-decoration: line-through;
+        }
+
+        ul li.checked::before {
+            background-image: url(img/checked.png);
+        }
+
+        ul li span {
+            position: absolute;
+            right: 0;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            border-radius: 30px;
+            font-size: 22px;
+            color: #555;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        ul li span:hover {
+            background: #002765;
+        }
+
+        #footer {
+            margin-top: 75px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+
+        #footer p {
+            font-size: 20px;
+        }
+
+        @media only screen and (max-width: 400px) {
+            button {
+                padding: 16px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <h2>To-do List <img src="img/icon.png"></h2>
+            <div class="row">
+                <input type="text" name="" id="input-box" placeholder="Add Your Tasks">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <ul id="list-container">
+                <!-- <li class="checked">Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li> -->
+            </ul>
+        </div>
+        <div id="footer">
+            <p>Copyrights &copy; codewithsuccess.</p>
+            <p>All rights reserved 2024.</p>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
